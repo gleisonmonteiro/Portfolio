@@ -1613,22 +1613,82 @@ p, h1, h2, h3, h4 { margin: 0; }
   position: absolute;
   left: 18px;
   right: 18px;
-  top: 116px;
+  top: 68px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--lime), var(--cyan), transparent);
   opacity: 0.72;
   animation: dispatchBeam 2.2s ease-in-out infinite;
 }
 
-.dispatch-gif {
+.dispatch-visual {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 82px;
-  object-fit: cover;
+  min-height: 104px;
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) 58px;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
   border: 1px solid rgba(100,216,255,0.16);
   border-radius: 10px;
-  background: #05080d;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+    rgba(3, 9, 16, 0.58);
+  background-size: 18px 18px;
+}
+
+.dispatch-clock,
+.dispatch-wa {
+  min-height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 900;
+}
+
+.dispatch-clock {
+  color: var(--cyan);
+  border: 1px solid rgba(100,216,255,0.2);
+  background: rgba(100,216,255,0.08);
+  font-size: 0.78rem;
+}
+
+.dispatch-wa {
+  color: #06120b;
+  background: var(--lime);
+  box-shadow: 0 0 24px rgba(185, 255, 61, 0.22);
+  animation: whatsappPulse 2.2s ease-in-out infinite;
+}
+
+.dispatch-fly-card {
+  justify-self: start;
+  width: 92px;
+  min-height: 58px;
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(185, 255, 61, 0.3);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(185,255,69,0.9), rgba(21,180,92,0.85));
+  box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+  animation: flyExecutiveCard 2.2s ease-in-out infinite;
+}
+
+.dispatch-fly-card i {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(5, 8, 13, 0.7);
+}
+
+.dispatch-fly-card i:first-child {
+  width: 68%;
+}
+
+.dispatch-fly-card i:last-child {
+  width: 46%;
 }
 
 .dispatch-phone {
@@ -2101,6 +2161,18 @@ input[type="range"] {
 @keyframes dispatchMessage {
   0%, 100% { opacity: 0.62; transform: translateY(6px); }
   34%, 72% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flyExecutiveCard {
+  0% { transform: translateX(-8px) scale(0.92); opacity: 0.45; }
+  18%, 72% { opacity: 1; }
+  52% { transform: translateX(38px) scale(1); }
+  100% { transform: translateX(78px) scale(0.9); opacity: 0; }
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 18px rgba(185,255,61,0.18); }
+  52% { transform: scale(1.08); box-shadow: 0 0 30px rgba(185,255,61,0.38); }
 }
 
 @keyframes scheduleBlink {
