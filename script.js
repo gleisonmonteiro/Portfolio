@@ -412,6 +412,7 @@ function setupDreSimulator() {
   const expenseCut = qs("#expenseCut");
   if (!salesLift || !marginLift || !expenseCut) return;
 
+  const simulator = qs("#dreSimulator");
   const dreTableBody = qs("#dreTableBody");
   const dreRevenue = qs("#dreRevenue");
   const dreGross = qs("#dreGross");
@@ -468,6 +469,7 @@ function setupDreSimulator() {
     if (salesLiftValue) salesLiftValue.textContent = `${salesPercent}%`;
     if (marginLiftValue) marginLiftValue.textContent = `${marginPoints} p.p.`;
     if (expenseCutValue) expenseCutValue.textContent = `${expensePercent}%`;
+    [salesLift, marginLift, expenseCut].forEach(setRangeProgress);
     if (dreTableBody) {
       dreTableBody.innerHTML = dre.rows.map(([label, baseValue, simulatedValue, share]) => `
         <tr class="${simulatedValue < 0 ? "is-negative" : "is-positive"}">
@@ -480,8 +482,97 @@ function setupDreSimulator() {
     }
   }
 
+  function setRangeProgress(input) {
+    const min = Number(input.min || 0);
+    const max = Number(input.max || 100);
+    const value = Number(input.value || 0);
+    const progress = max > min ? ((value - min) / (max - min)) * 100 : 0;
+    input.style.setProperty("--range-progress", `${progress}%`);
+  }
+
+  function setDemoValues({ sales, margin, expense }) {
+    salesLift.value = String(sales);
+    marginLift.value = String(margin);
+    expenseCut.value = String(expense);
+    updateDre();
+  }
+
+  function startAnimatedDemo() {
+    if (!simulator || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const inputs = [salesLift, marginLift, expenseCut];
+    const frames = [
+      { sales: 4, margin: 0, expense: 2 },
+      { sales: 16, margin: 3, expense: 8 },
+      { sales: 28, margin: 6, expense: 14 },
+      { sales: 8, margin: 1, expense: 20 }
+    ];
+    let frameIndex = 0;
+    let pausedUntil = 0;
+    let isVisible = true;
+    let animationFrame = 0;
+
+    function pauseDemo() {
+      pausedUntil = Date.now() + 10000;
+      simulator.classList.remove("is-auto-playing");
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    }
+
+    function animateDemoValues(target) {
+      const start = {
+        sales: Number(salesLift.value),
+        margin: Number(marginLift.value),
+        expense: Number(expenseCut.value)
+      };
+      const duration = 920;
+      const startedAt = performance.now();
+
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+
+      function tick(now) {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        const eased = 0.5 - Math.cos(progress * Math.PI) / 2;
+        setDemoValues({
+          sales: Math.round(start.sales + (target.sales - start.sales) * eased),
+          margin: Math.round(start.margin + (target.margin - start.margin) * eased),
+          expense: Math.round(start.expense + (target.expense - start.expense) * eased)
+        });
+
+        if (progress < 1 && Date.now() >= pausedUntil) {
+          animationFrame = window.requestAnimationFrame(tick);
+        }
+      }
+
+      animationFrame = window.requestAnimationFrame(tick);
+    }
+
+    inputs.forEach((input) => {
+      input.addEventListener("pointerdown", pauseDemo);
+      input.addEventListener("keydown", pauseDemo);
+      input.addEventListener("focus", pauseDemo);
+    });
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        isVisible = entries.some((entry) => entry.isIntersecting);
+        simulator.classList.toggle("is-auto-playing", isVisible && Date.now() >= pausedUntil);
+      }, { threshold: 0.35 });
+      observer.observe(simulator);
+    }
+
+    window.setInterval(() => {
+      if (!isVisible || Date.now() < pausedUntil) return;
+      frameIndex = (frameIndex + 1) % frames.length;
+      simulator.classList.add("is-auto-playing");
+      animateDemoValues(frames[frameIndex]);
+    }, 1450);
+
+    simulator.classList.add("is-auto-playing");
+  }
+
   [salesLift, marginLift, expenseCut].forEach((input) => input.addEventListener("input", updateDre));
   updateDre();
+  startAnimatedDemo();
 }
 
 function setupPriceCalculator() {
