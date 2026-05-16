@@ -1932,7 +1932,7 @@ input[type="range"] {
 }
 
 .dre-controls input[type="range"] {
-  height: 18px;
+  height: 12px;
   appearance: none;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--lime) 0 var(--range-progress, 50%), rgba(170,197,230,0.28) var(--range-progress, 50%) 100%);
@@ -1940,41 +1940,41 @@ input[type="range"] {
 }
 
 .dre-controls input[type="range"]::-webkit-slider-runnable-track {
-  height: 8px;
+  height: 6px;
   border-radius: 999px;
   background: transparent;
 }
 
 .dre-controls input[type="range"]::-webkit-slider-thumb {
-  width: 20px;
-  height: 20px;
-  margin-top: -6px;
+  width: 14px;
+  height: 14px;
+  margin-top: -4px;
   appearance: none;
   border: 0;
   border-radius: 50%;
   background: var(--lime);
-  box-shadow: 0 0 0 4px rgba(185,255,69,0.14), 0 0 18px rgba(185,255,69,0.28);
+  box-shadow: 0 0 0 3px rgba(185,255,69,0.12), 0 0 12px rgba(185,255,69,0.22);
 }
 
 .dre-controls input[type="range"]::-moz-range-track {
-  height: 8px;
+  height: 6px;
   border-radius: 999px;
   background: rgba(170,197,230,0.28);
 }
 
 .dre-controls input[type="range"]::-moz-range-progress {
-  height: 8px;
+  height: 6px;
   border-radius: 999px;
   background: var(--lime);
 }
 
 .dre-controls input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   border: 0;
   border-radius: 50%;
   background: var(--lime);
-  box-shadow: 0 0 0 4px rgba(185,255,69,0.14), 0 0 18px rgba(185,255,69,0.28);
+  box-shadow: 0 0 0 3px rgba(185,255,69,0.12), 0 0 12px rgba(185,255,69,0.22);
 }
 
 .dre-simulator.is-auto-playing .dre-results div {
