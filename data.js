@@ -41,7 +41,7 @@ window.PORTFOLIO_DATA = {
     { href: "#aplicativos", number: "05", title: "Aplicativos", detail: "Flutter, Firebase, chat em tempo real e painel admin.", status: "mobile" },
     { href: "#precificacao", number: "06", title: "Precificação", detail: "Custo, markup, desconto, despesa e margem em lote.", status: "margem" },
     { href: "#tabelas", number: "07", title: "Tabelas de exceção", detail: "Divergência fiscal, conciliação e performance.", status: "rastreio" },
-    { href: "#automacoes", number: "08", title: "Fluxos automáticos", detail: "XML, validação, pedido, impostos, ERP e SPED.", status: "processo" },
+    { href: "#automacoes", number: "08", title: "Fluxos automáticos", detail: "XML, validação, pedido, impostos, ERP, SPED e cards por WhatsApp.", status: "processo" },
     { href: "#financeiro", number: "09", title: "DRE gerencial", detail: "Simulação de venda, margem, despesa e resultado.", status: "decisão" }
   ],
 
@@ -253,6 +253,7 @@ window.PORTFOLIO_DATA = {
     { title: "Conferência com pedido", status: "R$ 3,7 mil divergentes", detail: "Valor XML comparado com pedido, custo e entrada.", tone: "red" },
     { title: "Cálculo de impostos", status: "92% validado", detail: "Base, alíquota e impacto no custo de compra.", tone: "green" },
     { title: "Lançamento ERP", status: "fila controlada", detail: "Pendências separadas antes de alimentar rotina interna.", tone: "blue" },
+    { title: "Disparo WhatsApp", status: "card executivo programado", detail: "Envio automático para a diretoria com os principais indicadores, conforme a programação solicitada.", tone: "green" },
     { title: "Auditoria SPED", status: "trilha limpa", detail: "Rastreio para fechamento fiscal e revisão preventiva.", tone: "green" }
   ],
 
@@ -263,7 +264,7 @@ window.PORTFOLIO_DATA = {
     },
     after: {
       title: "Depois",
-      items: ["Painel único", "Indicadores atualizados", "Alertas automáticos", "Rastreio por operação", "Gestão por exceção", "Decisão baseada em dados"]
+      items: ["Painel único", "Indicadores atualizados", "Alertas automáticos", "Rastreio por operação", "Gestão por exceção", "Decisão baseada em dados", "Disparo programado por WhatsApp"]
     }
   },
 
