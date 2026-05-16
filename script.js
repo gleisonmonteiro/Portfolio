@@ -484,6 +484,57 @@ function setupDreSimulator() {
   updateDre();
 }
 
+function setupPriceCalculator() {
+  const costInput = qs("#priceCost");
+  const markupInput = qs("#priceMarkup");
+  const expenseInput = qs("#priceExpense");
+  const discountInput = qs("#priceDiscount");
+  const tableBody = qs("#priceTableBody");
+  const avgSale = qs("#priceAvgSale");
+  const avgMargin = qs("#priceAvgMargin");
+  const avgCash = qs("#priceAvgCash");
+  if (!costInput || !markupInput || !expenseInput || !discountInput || !tableBody) return;
+
+  function updatePriceTable() {
+    const baseCost = Number(costInput.value) || 0;
+    const markup = Number(markupInput.value) || 1;
+    const expenses = (Number(expenseInput.value) || 0) / 100;
+    const discount = (Number(discountInput.value) || 0) / 100;
+    const rows = (data.priceItems || []).map((item) => {
+      const cost = baseCost * item.factor;
+      const sale = cost * markup;
+      const cash = sale * (1 - discount);
+      const margin = sale > 0 ? (sale - cost - sale * expenses) / sale : 0;
+      const status = margin >= item.target ? "Margem OK" : margin >= item.target - 0.04 ? "Atenção" : "Revisar preço";
+      return { ...item, cost, sale, cash, margin, status };
+    });
+
+    const averageSale = rows.reduce((sum, row) => sum + row.sale, 0) / Math.max(rows.length, 1);
+    const averageCash = rows.reduce((sum, row) => sum + row.cash, 0) / Math.max(rows.length, 1);
+    const averageMargin = rows.reduce((sum, row) => sum + row.margin, 0) / Math.max(rows.length, 1);
+
+    if (avgSale) avgSale.textContent = formatCurrency(averageSale);
+    if (avgCash) avgCash.textContent = formatCurrency(averageCash);
+    if (avgMargin) avgMargin.textContent = formatPercent(averageMargin);
+
+    tableBody.innerHTML = rows.map((row) => `
+      <tr>
+        <td data-label="Produto">${row.name}</td>
+        <td data-label="Custo">${formatCurrency(row.cost)}</td>
+        <td data-label="Venda prazo">${formatCurrency(row.sale)}</td>
+        <td data-label="Venda à vista">${formatCurrency(row.cash)}</td>
+        <td data-label="Margem">${formatPercent(row.margin)}</td>
+        <td data-label="Status"><span class="status-pill ${statusClass(row.status)}"><span class="status-dot ${statusClass(row.status)}"></span>${row.status}</span></td>
+      </tr>
+    `).join("");
+  }
+
+  [costInput, markupInput, expenseInput, discountInput].forEach((input) => {
+    input.addEventListener("input", updatePriceTable);
+  });
+  updatePriceTable();
+}
+
 function setupNavigation() {
   const links = qsa(".nav-link");
   const sections = links.map((link) => qs(link.getAttribute("href"))).filter(Boolean);
@@ -551,6 +602,7 @@ function init() {
   renderAutomation();
   renderBeforeAfter();
   setupDreSimulator();
+  setupPriceCalculator();
   setupNavigation();
   setupMenu();
   setupReveal();

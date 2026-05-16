@@ -31,11 +31,14 @@
         <a class="nav-link" href="#solucoes"><span>03</span>Áreas</a>
         <a class="nav-link" href="#demonstracoes"><span>04</span>Demonstrações</a>
         <a class="nav-link" href="#producao"><span>05</span>Produção</a>
-        <a class="nav-link" href="#tabelas"><span>06</span>Tabelas</a>
-        <a class="nav-link" href="#automacoes"><span>07</span>Automações</a>
-        <a class="nav-link" href="#antes-depois"><span>08</span>Antes/Depois</a>
-        <a class="nav-link" href="#financeiro"><span>09</span>DRE</a>
-        <a class="nav-link" href="#contato"><span>10</span>Contato</a>
+        <a class="nav-link" href="#aplicativos"><span>06</span>Aplicativos</a>
+        <a class="nav-link" href="#precificacao"><span>07</span>Precificação</a>
+        <a class="nav-link" href="#tabelas"><span>08</span>Tabelas</a>
+        <a class="nav-link" href="#automacoes"><span>09</span>Automações</a>
+        <a class="nav-link" href="#antes-depois"><span>10</span>Antes/Depois</a>
+        <a class="nav-link" href="#financeiro"><span>11</span>DRE</a>
+        <a class="nav-link" href="#release"><span>12</span>Release</a>
+        <a class="nav-link" href="#contato"><span>13</span>Contato</a>
       </nav>
 
       <div class="sidebar-status">
@@ -156,6 +159,100 @@
         </div>
       </section>
 
+      <section id="aplicativos" class="app-section section-panel reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Desenvolvimento de aplicativos</p>
+          <h2>Aplicativos operacionais com chat em tempo real, segurança e painel administrativo.</h2>
+          <p>Base técnica do projeto Família Chat, reposicionada para comunicação segura de operação: Flutter, Firebase, autenticação, banco em tempo real, mensagens, permissões, auditoria, notificações e estrutura mobile Android.</p>
+        </div>
+        <div class="app-showcase">
+          <div class="chat-gif" aria-label="Animação demonstrando bate-papo em tempo real">
+            <div class="phone-frame">
+              <div class="phone-top">
+                <span class="status-dot status-green"></span>
+                <strong>Comunicação interna</strong>
+                <small>online</small>
+              </div>
+              <div class="chat-stream">
+                <span class="chat-bubble left">Pedido aprovado no ERP.</span>
+                <span class="chat-bubble right">Recebido. Vou validar o estoque.</span>
+                <span class="chat-bubble left">Alerta fiscal anexado ao pedido.</span>
+                <span class="chat-bubble right">Diretoria já visualizou.</span>
+              </div>
+              <div class="typing-bar">
+                <i></i><i></i><i></i>
+                <span>sincronizando em tempo real</span>
+              </div>
+            </div>
+            <div class="realtime-panel">
+              <span>Firestore stream</span>
+              <strong>mensagens, leitura e auditoria</strong>
+              <div class="signal-lines">
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+          <div class="app-capabilities">
+            <article>
+              <span>Flutter Android</span>
+              <strong>Aplicativo mobile com telas separadas por perfil.</strong>
+              <small>Login, área administrativa, contatos autorizados, tela de chat e componentes reutilizáveis.</small>
+            </article>
+            <article>
+              <span>Firebase</span>
+              <strong>Backend em tempo real com autenticação e banco sincronizado.</strong>
+              <small>Firebase Auth, Cloud Firestore, Storage, Messaging e estrutura para notificações.</small>
+            </article>
+            <article>
+              <span>Controle e auditoria</span>
+              <strong>Permissão, rastreio, alertas e leitura administrativa.</strong>
+              <small>Arquitetura preparada para ambientes que exigem segurança, governança e visibilidade.</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="precificacao" class="content-section split-section price-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Calculadora de preços</p>
+          <h2>Precificação em lote com custo, markup, despesa, desconto e margem simulada.</h2>
+          <p>Uma visão prática para testar preço antes de vender: produto, custo, venda a prazo, venda à vista e margem estimada.</p>
+        </div>
+        <div class="price-workbench reveal">
+          <div class="filter-bar">
+            <span>Empresa: Todas</span>
+            <span>Canal: Varejo + Atacado</span>
+            <span>Operação: Simulação</span>
+          </div>
+          <div class="price-results">
+            <div><span>Preço médio</span><strong id="priceAvgSale">R$ 0</strong></div>
+            <div><span>Margem média</span><strong id="priceAvgMargin">0%</strong></div>
+            <div><span>Venda à vista</span><strong id="priceAvgCash">R$ 0</strong></div>
+          </div>
+          <div class="price-controls">
+            <label>Custo base <input id="priceCost" type="number" min="1" value="79"></label>
+            <label>Markup <input id="priceMarkup" type="number" min="1" step="0.1" value="2.2"></label>
+            <label>Despesas % <input id="priceExpense" type="number" min="0" value="20"></label>
+            <label>Desconto à vista % <input id="priceDiscount" type="number" min="0" value="12"></label>
+          </div>
+          <div class="price-table-wrap">
+            <table class="price-table" aria-label="Precificação simulada em lote">
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Custo</th>
+                  <th>Venda prazo</th>
+                  <th>Venda à vista</th>
+                  <th>Margem</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="priceTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       <section id="tabelas" class="content-section">
         <div class="section-heading reveal">
           <p class="eyebrow">Tabelas visuais</p>
@@ -233,6 +330,38 @@
               </thead>
               <tbody id="dreTableBody"></tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="release" class="release-section section-panel reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Release profissional</p>
+          <h2>Gleison Monteiro</h2>
+          <p>Especialista em ERP, BI e inteligência operacional, com atuação prática em varejo, atacado, indústria, financeiro, fiscal, estoque, compras, produção e diretoria.</p>
+        </div>
+        <div class="release-board">
+          <article class="release-profile">
+            <span class="status-dot status-green"></span>
+            <strong>ERP, dados e gestão real</strong>
+            <p>Mais de 10 anos conectando rotina operacional, banco de dados, relatórios gerenciais e decisão executiva. O foco é transformar informação dispersa em leitura clara para diretoria.</p>
+          </article>
+          <div class="release-grid">
+            <article>
+              <span>ERP e operação</span>
+              <strong>TOTVS Moda, Linx, Easy Linx, Alpha e rotinas integradas.</strong>
+              <small>Implantação, sustentação, processos, cadastro, loja, retaguarda e integração entre áreas.</small>
+            </article>
+            <article>
+              <span>BI e dados</span>
+              <strong>SQL PostgreSQL, Power BI, DAX, indicadores e DRE.</strong>
+              <small>Modelagem, consultas, métricas, dashboards, margem, estoque, vendas e leitura por exceção.</small>
+            </article>
+            <article>
+              <span>Automação e controle</span>
+              <strong>Fiscal, financeiro, conciliação, XML, compras e produção.</strong>
+              <small>Fluxos automatizados para reduzir retrabalho, expor divergências e dar rastreabilidade.</small>
+            </article>
           </div>
         </div>
       </section>

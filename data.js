@@ -38,9 +38,11 @@ window.PORTFOLIO_DATA = {
     { href: "#solucoes", number: "02", title: "Áreas de negócio", detail: "Financeiro, fiscal, comercial, estoque e operação.", status: "BI executivo" },
     { href: "#demonstracoes", number: "03", title: "Demonstrações", detail: "Painéis simulados com KPIs, gráficos e rankings.", status: "vitrine" },
     { href: "#producao", number: "04", title: "Produção e oficinas", detail: "Mapa de setores, gargalos, terceiros e eficiência.", status: "operação" },
-    { href: "#tabelas", number: "05", title: "Tabelas de exceção", detail: "Divergência fiscal, conciliação e performance.", status: "rastreio" },
-    { href: "#automacoes", number: "06", title: "Fluxos automáticos", detail: "XML, validação, pedido, impostos, ERP e SPED.", status: "processo" },
-    { href: "#financeiro", number: "07", title: "DRE gerencial", detail: "Simulação de venda, margem, despesa e resultado.", status: "decisão" }
+    { href: "#aplicativos", number: "05", title: "Aplicativos", detail: "Flutter, Firebase, chat em tempo real e painel admin.", status: "mobile" },
+    { href: "#precificacao", number: "06", title: "Precificação", detail: "Custo, markup, desconto, despesa e margem em lote.", status: "margem" },
+    { href: "#tabelas", number: "07", title: "Tabelas de exceção", detail: "Divergência fiscal, conciliação e performance.", status: "rastreio" },
+    { href: "#automacoes", number: "08", title: "Fluxos automáticos", detail: "XML, validação, pedido, impostos, ERP e SPED.", status: "processo" },
+    { href: "#financeiro", number: "09", title: "DRE gerencial", detail: "Simulação de venda, margem, despesa e resultado.", status: "decisão" }
   ],
 
   directorViews: [
@@ -264,6 +266,14 @@ window.PORTFOLIO_DATA = {
       items: ["Painel único", "Indicadores atualizados", "Alertas automáticos", "Rastreio por operação", "Gestão por exceção", "Decisão baseada em dados"]
     }
   },
+
+  priceItems: [
+    { name: "Blusa viscose", factor: 1, target: 0.38 },
+    { name: "Calça alfaiataria", factor: 1.42, target: 0.34 },
+    { name: "Vestido midi", factor: 1.86, target: 0.36 },
+    { name: "Camisa linho", factor: 1.18, target: 0.32 },
+    { name: "Conjunto premium", factor: 2.24, target: 0.40 }
+  ],
 
   dreBase: {
     revenue: 1280000,
