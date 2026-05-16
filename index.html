@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gleison Monteiro | ERP, BI e Automação Executiva</title>
-  <meta name="description" content="Portfólio profissional de Gleison Monteiro com ERP, BI, DRE, DPA, produção, financeiro, fiscal e automações.">
+  <title>Gleison Monteiro | BI, ERP e Decisão Executiva</title>
+  <meta name="description" content="Portfólio visual de Gleison Monteiro com dashboards executivos, ERP, BI financeiro, fiscal, estoque, compras, vendas e automações.">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="noise-layer" aria-hidden="true"></div>
+
   <div class="mobile-topbar">
     <span class="mobile-brand"><img src="./assets/logo-radiola.png" alt="Logo Radiola"><strong>Gleison Monteiro</strong></span>
     <button class="icon-button" type="button" data-menu-toggle aria-label="Abrir menu">Menu</button>
@@ -20,31 +21,28 @@
         <img class="brand-logo" src="./assets/logo-radiola.png" alt="Logo Radiola">
         <span>
           <strong>Gleison Monteiro</strong>
-          <small>ERP | BI | Automação</small>
+          <small>ERP | BI | Diretoria</small>
         </span>
       </a>
 
       <nav class="side-nav" aria-label="Navegação principal">
         <a class="nav-link is-active" href="#inicio"><span>01</span>Início</a>
-        <a class="nav-link" href="#release"><span>02</span>Release</a>
-        <a class="nav-link" href="#solucoes"><span>03</span>Soluções</a>
-        <a class="nav-link" href="#whatsapp"><span>04</span>WhatsApp</a>
+        <a class="nav-link" href="#visoes"><span>02</span>Visões</a>
+        <a class="nav-link" href="#solucoes"><span>03</span>Áreas</a>
+        <a class="nav-link" href="#demonstracoes"><span>04</span>Demonstrações</a>
         <a class="nav-link" href="#producao"><span>05</span>Produção</a>
-        <a class="nav-link" href="#dpa"><span>06</span>DPA</a>
-        <a class="nav-link" href="#dashboards"><span>07</span>Dashboards</a>
-        <a class="nav-link" href="#financeiro"><span>08</span>DRE</a>
-        <a class="nav-link" href="#precificacao"><span>09</span>Precificação</a>
-        <a class="nav-link" href="#pedidos"><span>10</span>Pedidos</a>
-        <a class="nav-link" href="#fiscal"><span>11</span>Fiscal</a>
-        <a class="nav-link" href="#projetos"><span>12</span>Projetos</a>
-        <a class="nav-link" href="#contato"><span>13</span>Contato</a>
+        <a class="nav-link" href="#tabelas"><span>06</span>Tabelas</a>
+        <a class="nav-link" href="#automacoes"><span>07</span>Automações</a>
+        <a class="nav-link" href="#antes-depois"><span>08</span>Antes/Depois</a>
+        <a class="nav-link" href="#financeiro"><span>09</span>DRE</a>
+        <a class="nav-link" href="#contato"><span>10</span>Contato</a>
       </nav>
 
       <div class="sidebar-status">
         <span class="pulse-dot"></span>
         <div>
-          <strong>Atendimento Executivo</strong>
-          <small>ERP, operação, financeiro e decisão em uma visão limpa.</small>
+          <strong>Visão executiva</strong>
+          <small>Da venda ao caixa, da compra ao estoque, da nota ao SPED.</small>
         </div>
       </div>
     </aside>
@@ -52,156 +50,130 @@
     <main class="main-content">
       <section id="inicio" class="hero-section section-panel">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Portfólio profissional</p>
-          <h1>ERP, BI e automação para operações com controle de verdade.</h1>
-          <p>
-            Soluções objetivas para diretoria, financeiro, fiscal, produção, corte, DPA,
-            lojas, varejo e atacado, com foco em rotina, conferência e indicador útil.
-          </p>
+          <p class="eyebrow">Dados que o ERP guarda, mas a diretoria ainda não enxerga</p>
+          <h1>Transformo dados, ERP e processos em painéis de decisão para gestão real.</h1>
+          <p>Margem, estoque, fiscal e financeiro em uma visão executiva. O painel mostra onde o dinheiro entra, trava, escapa ou fica parado.</p>
           <div class="button-row">
-            <a class="primary-button" data-contact-link="whatsapp" href="#">Entre em contato</a>
-            <a class="secondary-button" href="#financeiro">Simular DRE</a>
+            <a class="primary-button" data-contact-link="whatsapp" href="#">Falar sobre um painel</a>
+            <a class="secondary-button" href="#demonstracoes">Ver demonstrações</a>
+          </div>
+          <div class="hero-proof">
+            <span>margem por empresa</span>
+            <span>risco fiscal</span>
+            <span>capital parado</span>
+            <span>fluxo de caixa</span>
           </div>
         </div>
 
-        <div class="hero-dashboard reveal" aria-label="Painel demonstrativo executivo">
+        <div class="hero-dashboard reveal" aria-label="Dashboard executivo simulado">
           <div class="dashboard-top">
-            <span>painel.executivo</span>
-            <strong>Operação integrada</strong>
+            <span>executive.workspace</span>
+            <strong>Diretoria em tempo real</strong>
+          </div>
+          <div class="filter-bar compact">
+            <span>Período: Maio/2026</span>
+            <span>Empresa: Grupo</span>
+            <span>Operação: Varejo + Atacado</span>
           </div>
           <div class="hero-kpis" id="heroKpis"></div>
-          <div class="allocation-visual">
-            <div class="allocation-card">
-              <small>Perfil de loja</small>
-              <strong>Venda + Giro</strong>
+          <div class="hero-dashboard-grid">
+            <div class="dashboard-widget large">
+              <div class="widget-head"><span>Evolução de vendas</span><strong>R$ 4,82 mi</strong></div>
+              <div id="heroLineChart" class="svg-chart"></div>
             </div>
-            <div class="allocation-line"></div>
-            <div class="allocation-card accent">
-              <small>DPA otimizado</small>
-              <strong>Distribuição</strong>
+            <div class="dashboard-widget">
+              <div class="widget-head"><span>Meta realizada</span><strong>86%</strong></div>
+              <div class="radial-meter" style="--value:86"><span>86%</span></div>
+            </div>
+            <div class="dashboard-widget">
+              <div class="widget-head"><span>Alertas</span><strong>12</strong></div>
+              <div class="alert-stack" id="heroAlerts"></div>
             </div>
           </div>
-          <div class="hero-chart refined">
-            <span style="--h:38%"></span>
-            <span style="--h:52%"></span>
-            <span style="--h:48%"></span>
-            <span style="--h:66%"></span>
-            <span style="--h:58%"></span>
-            <span style="--h:74%"></span>
-          </div>
+          <div class="hero-modules" id="heroModules"></div>
         </div>
       </section>
 
-      <section id="release" class="release-section section-panel reveal">
-        <div>
-          <p class="eyebrow">Release</p>
-          <h2>Gleison Monteiro</h2>
+      <section class="jump-section section-panel reveal" aria-label="Menu vertical de saltos executivos">
+        <div class="section-heading">
+          <p class="eyebrow">Menu executivo</p>
+          <h2>Saltos diretos por visão de gestão.</h2>
+          <p>Escolha a leitura que o diretor precisa abrir primeiro: rentabilidade, caixa, fiscal, estoque, operação ou DRE.</p>
         </div>
-        <div class="release-copy">
-          <p>
-            Especialista em ERP e inteligência operacional com mais de 10 anos de experiência em TOTVS Moda,
-            atuando na integração entre tecnologia, varejo, financeiro, fiscal e tomada de decisão estratégica.
-          </p>
-          <p>
-            Possuo vivência prática em implantações, sustentação, integrações e evolução de ambientes utilizando
-            TOTVS Moda, Taylor, Gera, Easy Linx, Linx Degust e Alpha, conectando operações de varejo e atacado em
-            estruturas mais organizadas, rastreáveis e orientadas por indicadores reais de performance.
-          </p>
-          <p>
-            Tenho forte experiência em modelagem de dados, SQL PostgreSQL, Power BI e DAX avançado, desenvolvendo
-            consultas, regras de negócio, indicadores estratégicos e estruturas analíticas voltadas para performance
-            operacional e tomada de decisão.
-          </p>
-          <div class="release-columns">
-            <div>
-              <h3>Atuação direta</h3>
-              <ul>
-                <li>automação financeira;</li>
-                <li>conciliação bancária;</li>
-                <li>baixa automática de XML;</li>
-                <li>conferência fiscal;</li>
-                <li>cálculo e validação tributária;</li>
-                <li>integração entre setores;</li>
-                <li>dashboards executivos;</li>
-                <li>inteligência comercial;</li>
-                <li>análise de estoque e margem;</li>
-                <li>DRE gerencial;</li>
-                <li>automação de processos operacionais;</li>
-                <li>monitoramento de indicadores em tempo real.</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Áreas integradas</h3>
-              <ul>
-                <li>corte;</li>
-                <li>almoxarifado;</li>
-                <li>compras;</li>
-                <li>estoque;</li>
-                <li>comercial;</li>
-                <li>financeiro;</li>
-                <li>RH;</li>
-                <li>frente de loja;</li>
-                <li>expedição;</li>
-                <li>atacado;</li>
-                <li>varejo;</li>
-                <li>faturamento;</li>
-                <li>fiscal;</li>
-                <li>BI corporativo.</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Desenvolvimento</h3>
-              <ul>
-                <li>painéis executivos;</li>
-                <li>simuladores financeiros;</li>
-                <li>motores de precificação;</li>
-                <li>estruturas analíticas para vendas e estoque;</li>
-                <li>automações fiscais;</li>
-                <li>integrações entre sistemas;</li>
-                <li>controles operacionais inteligentes;</li>
-                <li>fluxos automatizados de validação e conferência.</li>
-              </ul>
-            </div>
-          </div>
-          <p>
-            Minha atuação vai além da sustentação do ERP. Trabalho na transformação operacional do negócio através da
-            tecnologia, reduzindo retrabalho, eliminando processos manuais, aumentando rastreabilidade e criando
-            visibilidade gerencial sobre dados críticos da operação.
-          </p>
-          <p>
-            Tenho perfil altamente analítico, com forte capacidade de traduzir operações complexas em processos claros,
-            automatizados e mensuráveis, sempre focando em eficiência operacional, confiabilidade da informação e
-            escalabilidade dos processos.
-          </p>
-          <p>
-            Hoje concentro minha atuação na criação de soluções que unem ERP, BI, automação e inteligência operacional
-            para empresas que precisam de mais controle, velocidade e clareza na gestão.
-          </p>
-        </div>
+        <nav class="jump-menu" id="jumpMenu" aria-label="Saltos para painéis do portfólio"></nav>
       </section>
 
       <section class="metric-strip" id="metricStrip"></section>
 
+      <section id="visoes" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Visões que a diretoria passa a ter</p>
+          <h2>Indicadores que mostram onde a empresa ganha, perde ou sangra dinheiro.</h2>
+          <p>Leitura estratégica por empresa, vendedor, produto, marca, operação, cliente, compra, estoque e fiscal.</p>
+        </div>
+        <div class="director-grid" id="directorViews"></div>
+      </section>
+
       <section id="solucoes" class="content-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Soluções</p>
-          <h2>Sistemas sob medida para operações exigentes.</h2>
-          <p>Processos separados por área, com leitura prática para quem precisa operar e decidir.</p>
+          <p class="eyebrow">Vitrine de negócios</p>
+          <h2>Operação espalhada transformada em painéis de gestão.</h2>
+          <p>Blocos visuais simulam telas reais de BI para financeiro, fiscal, comercial, estoque, conciliação e operação.</p>
         </div>
         <div class="solution-grid" id="solutionGrid"></div>
       </section>
 
-      <section id="whatsapp" class="whatsapp-section section-panel reveal">
-        <div class="section-heading">
-          <p class="eyebrow">Destaque</p>
-          <h2>Automação de WhatsApp com card executivo de envio.</h2>
-          <p>
-            Rotina demonstrativa para preparar, validar e disparar comunicados de diretoria,
-            com confirmação visual do conteúdo enviado.
-          </p>
+      <section id="demonstracoes" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Demonstrações de Painéis</p>
+          <h2>Power BI, ERP e operação no mesmo raciocínio executivo.</h2>
+          <p>Filtros, KPIs, gráficos, tabelas e alertas com dados fictícios para demonstrar leitura de diretoria.</p>
         </div>
-        <div class="whatsapp-showcase">
-          <div class="robot-gif" aria-label="Robô animado disparando mensagens para contatos">
+        <div class="demo-grid" id="demoPanels"></div>
+      </section>
+
+      <section id="producao" class="production-section section-panel reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Visões de produção</p>
+          <h2>Mapa de setores, oficinas e eficiência operacional.</h2>
+          <p>Corte, costura, estamparia, bordado, acabamento, expedição e DPA com status vivo por gargalo.</p>
+        </div>
+        <div class="production-layout">
+          <div class="production-map-card">
+            <div class="dashboard-top">
+              <span>setores.operacao</span>
+              <strong>Mapa de setores</strong>
+            </div>
+            <div class="sector-map" id="sectorMap"></div>
+          </div>
+          <div class="production-map-card">
+            <div class="dashboard-top">
+              <span>oficinas.terceiros</span>
+              <strong>Mapa de oficinas</strong>
+            </div>
+            <div class="workshop-map" id="workshopMap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabelas" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Tabelas visuais</p>
+          <h2>Rastreio por exceção, com diferença, status e prioridade.</h2>
+          <p>Quando o número não fecha, o painel precisa apontar a linha, a origem e o impacto.</p>
+        </div>
+        <div class="table-grid" id="visualTables"></div>
+      </section>
+
+      <section id="automacoes" class="automation-section section-panel reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Automações</p>
+          <h2>Decisão com rastreio: da nota ao SPED.</h2>
+          <p>Entrada de XML, validação, conferência, cálculo, lançamento e auditoria em um fluxo visual monitorado.</p>
+        </div>
+        <div class="automation-showcase">
+          <div class="automation-flow" id="automationFlow"></div>
+          <div class="robot-gif" aria-label="Robô animado monitorando automações fiscais">
             <div class="robot-core">
               <span class="robot-eye"></span>
               <span class="robot-eye"></span>
@@ -215,66 +187,29 @@
             <div class="contact-dot dot-b"></div>
             <div class="contact-dot dot-c"></div>
           </div>
-          <article class="whatsapp-card">
-            <div class="wa-card-head">
-              <span>Envio confirmado</span>
-              <strong>Relatório Diretoria</strong>
-            </div>
-            <div class="wa-card-body">
-              <p><strong>Bom dia, diretoria.</strong></p>
-              <p>Segue fechamento parcial com dados fictícios para acompanhamento.</p>
-              <div class="wa-kpis">
-                <span>Venda: <strong>R$ 428.900</strong></span>
-                <span>Margem: <strong>34,8%</strong></span>
-                <span>Pedidos: <strong>286</strong></span>
-              </div>
-              <p>Alertas: queda de venda por hora entre 14h e 16h, reforço sugerido para lojas de maior giro.</p>
-            </div>
-            <div class="wa-card-foot">Mensagem enviada para lista executiva simulada.</div>
-          </article>
         </div>
       </section>
 
-      <section id="producao" class="content-section">
+      <section id="antes-depois" class="content-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Produção</p>
-          <h2>Eficiência por setor: corte, estamparias, bordados, oficinas e DPA.</h2>
-          <p>Visão operacional separada da DRE, com gargalos, fila e produtividade por etapa.</p>
+          <p class="eyebrow">O que o cliente enxerga</p>
+          <h2>A diretoria deixa de depender de achismo, relatório atrasado e planilha manual.</h2>
         </div>
-        <div class="production-grid" id="productionGrid"></div>
-      </section>
-
-      <section id="dpa" class="dpa-section section-panel reveal">
-        <div class="section-heading">
-          <p class="eyebrow">Destaque</p>
-          <h2>Otimização do DPA para distribuir melhor, sobrar menos e vender com mais aderência.</h2>
-          <p>
-            O painel cruza venda, perfil de loja, giro, cobertura, grade e categoria para sugerir
-            uma distribuição mais inteligente do DPA para cada loja.
-          </p>
-        </div>
-        <div class="dpa-board" id="dpaBoard"></div>
-      </section>
-
-      <section id="dashboards" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Dashboards</p>
-          <h2>Painéis de venda, margem, estoque e comportamento por hora.</h2>
-          <p>Indicadores simulados, sem dados reais, pensados para conversa com diretoria.</p>
-        </div>
-        <div class="dashboard-grid" id="dashboardGrid"></div>
+        <div class="before-after-grid" id="beforeAfter"></div>
       </section>
 
       <section id="financeiro" class="content-section split-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Financeiro</p>
-          <h2>DRE dinâmica com tabela de composição e simulação por controles.</h2>
-          <p>
-            Arraste os controles e veja como venda, margem bruta e redução de despesa alteram
-            receita, CMV, lucro operacional e margem líquida.
-          </p>
+          <p class="eyebrow">DRE gerencial</p>
+          <h2>Lucro e prejuízo por unidade, com simulação de margem, venda e despesa.</h2>
+          <p>O diretor vê impacto financeiro antes de decidir: receita, CMV, despesa, resultado e margem líquida.</p>
         </div>
         <div class="dre-simulator reveal" id="dreSimulator">
+          <div class="filter-bar">
+            <span>Empresa: Todas</span>
+            <span>Período: Trimestre</span>
+            <span>Operação: Consolidada</span>
+          </div>
           <div class="dre-results">
             <div><span>Receita projetada</span><strong id="dreRevenue">R$ 0</strong></div>
             <div><span>Lucro bruto</span><strong id="dreGross">R$ 0</strong></div>
@@ -302,63 +237,11 @@
         </div>
       </section>
 
-      <section id="precificacao" class="content-section split-section price-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Precificação</p>
-          <h2>Calculadora de preços para precificar vários produtos de uma vez.</h2>
-          <p>
-            Inspirada no projeto da calculadora: colagem de itens, custos de aquisição,
-            impostos, despesas, markup, margem e sugestão de venda em lote.
-          </p>
-        </div>
-        <div class="price-workbench reveal">
-          <div class="price-controls">
-            <label>Custo base <input id="priceCost" type="number" min="1" value="79"></label>
-            <label>Markup <input id="priceMarkup" type="number" min="1" step="0.1" value="2.2"></label>
-            <label>Despesas % <input id="priceExpense" type="number" min="0" value="20"></label>
-            <label>Desconto à vista % <input id="priceDiscount" type="number" min="0" value="12"></label>
-          </div>
-          <div class="price-table-wrap">
-            <table class="price-table" aria-label="Precificação simulada em lote">
-              <thead><tr><th>Produto</th><th>Custo</th><th>Venda prazo</th><th>Venda à vista</th><th>Margem</th></tr></thead>
-              <tbody id="priceTableBody"></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section id="pedidos" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Pedidos</p>
-          <h2>Módulo de pedidos para entrada, grade, conferência e exportação.</h2>
-          <p>Fluxo demonstrativo para organizar pedidos por produto, loja, quantidade, status e retorno para ERP.</p>
-        </div>
-        <div class="orders-grid" id="ordersGrid"></div>
-      </section>
-
-      <section id="fiscal" class="content-section fiscal-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Fiscal</p>
-          <h2>Conferência fiscal com rastreio, regra e redução de erro.</h2>
-          <p>XML, impostos, entrada, SPED e divergências em uma rotina mais segura.</p>
-        </div>
-        <div class="fiscal-grid" id="fiscalGrid"></div>
-      </section>
-
-      <section id="projetos" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Projetos</p>
-          <h2>Projetos demonstrativos com foco em gestão e operação real.</h2>
-          <p>Aplicações para decisão, distribuição, produção, fiscal, financeiro e integrações.</p>
-        </div>
-        <div class="project-grid" id="projectGrid"></div>
-      </section>
-
       <section id="contato" class="contact-section section-panel">
         <div class="contact-copy reveal">
           <p class="eyebrow">Contato</p>
-          <h2>Quer transformar operação em controle, margem e clareza?</h2>
-          <p>Vamos conversar sobre ERP, BI, DPA, DRE, produção, pedidos e automações com uma abordagem objetiva e executiva.</p>
+          <h2>Vamos revelar os dados estratégicos que hoje ficam escondidos no ERP, nas planilhas e nos relatórios soltos.</h2>
+          <p>BI financeiro, fiscal, estoque, compras, vendas, conciliação e gestão operacional com linguagem de diretoria.</p>
         </div>
         <div class="contact-actions reveal" id="contactActions"></div>
       </section>
