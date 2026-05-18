@@ -26,18 +26,18 @@
       </a>
 
       <nav class="side-nav" aria-label="Navegação principal">
-        <a class="nav-link" href="#antes-depois"><span>01</span>Antes/Depois</a>
-        <a class="nav-link" href="#aplicativos"><span>02</span>Aplicativos</a>
-        <a class="nav-link" href="#solucoes"><span>03</span>Áreas</a>
-        <a class="nav-link" href="#automacoes"><span>04</span>Automações</a>
-        <a class="nav-link" href="#demonstracoes"><span>05</span>Demonstrações</a>
-        <a class="nav-link" href="#financeiro"><span>06</span>DRE</a>
-        <a class="nav-link is-active" href="#inicio"><span>07</span>Início</a>
-        <a class="nav-link" href="#precificacao"><span>08</span>Precificação</a>
-        <a class="nav-link" href="#producao"><span>09</span>Produção</a>
-        <a class="nav-link" href="#release"><span>10</span>Release</a>
+        <a class="nav-link is-active" href="#inicio"><span>01</span>Início</a>
+        <a class="nav-link" href="#automacoes"><span>02</span>Automações</a>
+        <a class="nav-link" href="#antes-depois"><span>03</span>Antes/Depois</a>
+        <a class="nav-link" href="#visoes"><span>04</span>Visões</a>
+        <a class="nav-link" href="#aplicativos"><span>05</span>Aplicativos</a>
+        <a class="nav-link" href="#solucoes"><span>06</span>Áreas</a>
+        <a class="nav-link" href="#financeiro"><span>07</span>DRE</a>
+        <a class="nav-link" href="#demonstracoes"><span>08</span>Demonstrações</a>
+        <a class="nav-link" href="#precificacao"><span>09</span>Precificação</a>
+        <a class="nav-link" href="#producao"><span>10</span>Produção</a>
         <a class="nav-link" href="#tabelas"><span>11</span>Tabelas</a>
-        <a class="nav-link" href="#visoes"><span>12</span>Visões</a>
+        <a class="nav-link" href="#release"><span>12</span>Release</a>
         <a class="nav-link" href="#contato"><span>13</span>Contato</a>
       </nav>
 
@@ -108,160 +108,6 @@
 
       <section class="metric-strip" id="metricStrip"></section>
 
-      <section id="visoes" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Visões que a diretoria passa a ter</p>
-          <h2>Indicadores que mostram onde a empresa ganha, perde ou sangra dinheiro.</h2>
-          <p>Leitura estratégica por empresa, vendedor, produto, marca, operação, cliente, compra, estoque e fiscal.</p>
-        </div>
-        <div class="director-grid" id="directorViews"></div>
-      </section>
-
-      <section id="solucoes" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Vitrine de negócios</p>
-          <h2>Operação espalhada transformada em painéis de gestão.</h2>
-          <p>Blocos visuais simulam telas reais de BI para financeiro, fiscal, comercial, estoque, conciliação e operação.</p>
-        </div>
-        <div class="solution-grid" id="solutionGrid"></div>
-      </section>
-
-      <section id="demonstracoes" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Demonstrações de Painéis</p>
-          <h2>Power BI, ERP e operação no mesmo raciocínio executivo.</h2>
-          <p>Filtros, KPIs, gráficos, tabelas e alertas com dados fictícios para demonstrar leitura de diretoria.</p>
-        </div>
-        <div class="demo-grid" id="demoPanels"></div>
-      </section>
-
-      <section id="producao" class="production-section section-panel reveal">
-        <div class="section-heading">
-          <p class="eyebrow">Visões de produção</p>
-          <h2>Mapa de setores, oficinas e eficiência operacional.</h2>
-          <p>Corte, costura, estamparia, bordado, acabamento, expedição e DPA com status vivo por gargalo.</p>
-        </div>
-        <div class="production-layout">
-          <div class="production-map-card">
-            <div class="dashboard-top">
-              <span>setores.operacao</span>
-              <strong>Mapa de setores</strong>
-            </div>
-            <div class="sector-map" id="sectorMap"></div>
-          </div>
-          <div class="production-map-card">
-            <div class="dashboard-top">
-              <span>oficinas.terceiros</span>
-              <strong>Mapa de oficinas</strong>
-            </div>
-            <div class="workshop-map" id="workshopMap"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="aplicativos" class="app-section section-panel reveal">
-        <div class="section-heading">
-          <p class="eyebrow">Desenvolvimento de aplicativos</p>
-          <h2>Aplicativos operacionais com chat em tempo real, segurança e painel administrativo.</h2>
-          <p>O Família Chat nasceu com um propósito específico e aqui aparece adaptado como prova de arquitetura mobile segura: Flutter, Firebase, autenticação, mensagens em tempo real, permissões, auditoria, notificações e painel administrativo para operação.</p>
-        </div>
-        <div class="app-showcase">
-          <div class="chat-gif" aria-label="Animação demonstrando bate-papo em tempo real">
-            <div class="phone-frame">
-              <div class="phone-top">
-                <span class="status-dot status-green"></span>
-                <strong>Comunicação interna</strong>
-                <small>online</small>
-              </div>
-              <div class="chat-stream">
-                <span class="chat-bubble left">Pedido aprovado no ERP.</span>
-                <span class="chat-bubble right">Recebido. Vou validar o estoque.</span>
-                <span class="chat-bubble left">Alerta fiscal anexado ao pedido.</span>
-                <span class="chat-bubble right">Diretoria já visualizou.</span>
-              </div>
-              <div class="typing-bar">
-                <i></i><i></i><i></i>
-                <span>sincronizando em tempo real</span>
-              </div>
-            </div>
-            <div class="realtime-panel">
-              <span>Firestore stream</span>
-              <strong>mensagens, leitura e auditoria</strong>
-              <div class="signal-lines">
-                <i></i><i></i><i></i><i></i>
-              </div>
-            </div>
-          </div>
-          <div class="app-capabilities">
-            <article>
-              <span>Flutter Android</span>
-              <strong>Aplicativo mobile com telas separadas por perfil.</strong>
-              <small>Login, área administrativa, contatos autorizados, tela de chat e componentes reutilizáveis.</small>
-            </article>
-            <article>
-              <span>Firebase</span>
-              <strong>Backend em tempo real com autenticação e banco sincronizado.</strong>
-              <small>Firebase Auth, Cloud Firestore, Storage, Messaging e estrutura para notificações.</small>
-            </article>
-            <article>
-              <span>Controle e auditoria</span>
-              <strong>Permissão, rastreio, alertas e leitura administrativa.</strong>
-              <small>Arquitetura preparada para ambientes que exigem segurança, governança e visibilidade.</small>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="precificacao" class="content-section split-section price-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Calculadora de preços</p>
-          <h2>Precificação em lote com custo, markup, despesa, desconto e margem simulada.</h2>
-          <p>Uma visão prática para testar preço antes de vender: produto, custo, venda a prazo, venda à vista e margem estimada.</p>
-        </div>
-        <div class="price-workbench reveal">
-          <div class="filter-bar">
-            <span>Empresa: Todas</span>
-            <span>Canal: Varejo + Atacado</span>
-            <span>Operação: Simulação</span>
-          </div>
-          <div class="price-results">
-            <div><span>Preço médio</span><strong id="priceAvgSale">R$ 0</strong></div>
-            <div><span>Margem média</span><strong id="priceAvgMargin">0%</strong></div>
-            <div><span>Venda à vista</span><strong id="priceAvgCash">R$ 0</strong></div>
-          </div>
-          <div class="price-controls">
-            <label>Custo base <input id="priceCost" type="number" min="1" value="79"></label>
-            <label>Markup <input id="priceMarkup" type="number" min="1" step="0.1" value="2.2"></label>
-            <label>Despesas % <input id="priceExpense" type="number" min="0" value="20"></label>
-            <label>Desconto à vista % <input id="priceDiscount" type="number" min="0" value="12"></label>
-          </div>
-          <div class="price-table-wrap">
-            <table class="price-table" aria-label="Precificação simulada em lote">
-              <thead>
-                <tr>
-                  <th>Produto</th>
-                  <th>Custo</th>
-                  <th>Venda prazo</th>
-                  <th>Venda à vista</th>
-                  <th>Margem</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody id="priceTableBody"></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section id="tabelas" class="content-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Tabelas visuais</p>
-          <h2>Rastreio por exceção, com diferença, status e prioridade.</h2>
-          <p>Quando o número não fecha, o painel precisa apontar a linha, a origem e o impacto.</p>
-        </div>
-        <div class="table-grid" id="visualTables"></div>
-      </section>
-
       <section id="automacoes" class="automation-section section-panel reveal">
         <div class="section-heading">
           <p class="eyebrow">Automações</p>
@@ -326,6 +172,77 @@
         <div class="before-after-grid" id="beforeAfter"></div>
       </section>
 
+      <section id="visoes" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Visões que a diretoria passa a ter</p>
+          <h2>Indicadores que mostram onde a empresa ganha, perde ou sangra dinheiro.</h2>
+          <p>Leitura estratégica por empresa, vendedor, produto, marca, operação, cliente, compra, estoque e fiscal.</p>
+        </div>
+        <div class="director-grid" id="directorViews"></div>
+      </section>
+
+      <section id="aplicativos" class="app-section section-panel reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Desenvolvimento de aplicativos</p>
+          <h2>Aplicativos operacionais com chat em tempo real, segurança e painel administrativo.</h2>
+          <p>O Família Chat nasceu com um propósito específico e aqui aparece adaptado como prova de arquitetura mobile segura: Flutter, Firebase, autenticação, mensagens em tempo real, permissões, auditoria, notificações e painel administrativo para operação.</p>
+        </div>
+        <div class="app-showcase">
+          <div class="chat-gif" aria-label="Animação demonstrando bate-papo em tempo real">
+            <div class="phone-frame">
+              <div class="phone-top">
+                <span class="status-dot status-green"></span>
+                <strong>Comunicação interna</strong>
+                <small>online</small>
+              </div>
+              <div class="chat-stream">
+                <span class="chat-bubble left">Pedido aprovado no ERP.</span>
+                <span class="chat-bubble right">Recebido. Vou validar o estoque.</span>
+                <span class="chat-bubble left">Alerta fiscal anexado ao pedido.</span>
+                <span class="chat-bubble right">Diretoria já visualizou.</span>
+              </div>
+              <div class="typing-bar">
+                <i></i><i></i><i></i>
+                <span>sincronizando em tempo real</span>
+              </div>
+            </div>
+            <div class="realtime-panel">
+              <span>Firestore stream</span>
+              <strong>mensagens, leitura e auditoria</strong>
+              <div class="signal-lines">
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+          <div class="app-capabilities">
+            <article>
+              <span>Flutter Android</span>
+              <strong>Aplicativo mobile com telas separadas por perfil.</strong>
+              <small>Login, área administrativa, contatos autorizados, tela de chat e componentes reutilizáveis.</small>
+            </article>
+            <article>
+              <span>Firebase</span>
+              <strong>Backend em tempo real com autenticação e banco sincronizado.</strong>
+              <small>Firebase Auth, Cloud Firestore, Storage, Messaging e estrutura para notificações.</small>
+            </article>
+            <article>
+              <span>Controle e auditoria</span>
+              <strong>Permissão, rastreio, alertas e leitura administrativa.</strong>
+              <small>Arquitetura preparada para ambientes que exigem segurança, governança e visibilidade.</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="solucoes" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Vitrine de negócios</p>
+          <h2>Operação espalhada transformada em painéis de gestão.</h2>
+          <p>Blocos visuais simulam telas reais de BI para financeiro, fiscal, comercial, estoque, conciliação e operação.</p>
+        </div>
+        <div class="solution-grid" id="solutionGrid"></div>
+      </section>
+
       <section id="financeiro" class="content-section split-section">
         <div class="section-heading reveal">
           <p class="eyebrow">DRE gerencial</p>
@@ -363,6 +280,89 @@
             </table>
           </div>
         </div>
+      </section>
+
+      <section id="demonstracoes" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Demonstrações de Painéis</p>
+          <h2>Power BI, ERP e operação no mesmo raciocínio executivo.</h2>
+          <p>Filtros, KPIs, gráficos, tabelas e alertas com dados fictícios para demonstrar leitura de diretoria.</p>
+        </div>
+        <div class="demo-grid" id="demoPanels"></div>
+      </section>
+
+      <section id="precificacao" class="content-section split-section price-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Calculadora de preços</p>
+          <h2>Precificação em lote com custo, markup, despesa, desconto e margem simulada.</h2>
+          <p>Uma visão prática para testar preço antes de vender: produto, custo, venda a prazo, venda à vista e margem estimada.</p>
+        </div>
+        <div class="price-workbench reveal">
+          <div class="filter-bar">
+            <span>Empresa: Todas</span>
+            <span>Canal: Varejo + Atacado</span>
+            <span>Operação: Simulação</span>
+          </div>
+          <div class="price-results">
+            <div><span>Preço médio</span><strong id="priceAvgSale">R$ 0</strong></div>
+            <div><span>Margem média</span><strong id="priceAvgMargin">0%</strong></div>
+            <div><span>Venda à vista</span><strong id="priceAvgCash">R$ 0</strong></div>
+          </div>
+          <div class="price-controls">
+            <label>Custo base <input id="priceCost" type="number" min="1" value="79"></label>
+            <label>Markup <input id="priceMarkup" type="number" min="1" step="0.1" value="2.2"></label>
+            <label>Despesas % <input id="priceExpense" type="number" min="0" value="20"></label>
+            <label>Desconto à vista % <input id="priceDiscount" type="number" min="0" value="12"></label>
+          </div>
+          <div class="price-table-wrap">
+            <table class="price-table" aria-label="Precificação simulada em lote">
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Custo</th>
+                  <th>Venda prazo</th>
+                  <th>Venda à vista</th>
+                  <th>Margem</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="priceTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="producao" class="production-section section-panel reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Visões de produção</p>
+          <h2>Mapa de setores, oficinas e eficiência operacional.</h2>
+          <p>Corte, costura, estamparia, bordado, acabamento, expedição e DPA com status vivo por gargalo.</p>
+        </div>
+        <div class="production-layout">
+          <div class="production-map-card">
+            <div class="dashboard-top">
+              <span>setores.operacao</span>
+              <strong>Mapa de setores</strong>
+            </div>
+            <div class="sector-map" id="sectorMap"></div>
+          </div>
+          <div class="production-map-card">
+            <div class="dashboard-top">
+              <span>oficinas.terceiros</span>
+              <strong>Mapa de oficinas</strong>
+            </div>
+            <div class="workshop-map" id="workshopMap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabelas" class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Tabelas visuais</p>
+          <h2>Rastreio por exceção, com diferença, status e prioridade.</h2>
+          <p>Quando o número não fecha, o painel precisa apontar a linha, a origem e o impacto.</p>
+        </div>
+        <div class="table-grid" id="visualTables"></div>
       </section>
 
       <section id="release" class="release-section section-panel reveal">

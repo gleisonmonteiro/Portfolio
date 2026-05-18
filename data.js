@@ -34,15 +34,16 @@ window.PORTFOLIO_DATA = {
   ],
 
   jumpMenu: [
-    { href: "#visoes", number: "01", title: "Visões da diretoria", detail: "Margem, capital parado, risco financeiro e fiscal.", status: "estratégico" },
-    { href: "#solucoes", number: "02", title: "Áreas de negócio", detail: "Financeiro, fiscal, comercial, estoque e operação.", status: "BI executivo" },
-    { href: "#demonstracoes", number: "03", title: "Demonstrações", detail: "Painéis simulados com KPIs, gráficos e rankings.", status: "vitrine" },
-    { href: "#producao", number: "04", title: "Produção e oficinas", detail: "Mapa de setores, gargalos, terceiros e eficiência.", status: "operação" },
-    { href: "#aplicativos", number: "05", title: "Aplicativos", detail: "Flutter, Firebase, chat em tempo real e painel admin.", status: "mobile" },
-    { href: "#precificacao", number: "06", title: "Precificação", detail: "Custo, markup, desconto, despesa e margem em lote.", status: "margem" },
-    { href: "#tabelas", number: "07", title: "Tabelas de exceção", detail: "Divergência fiscal, conciliação e performance.", status: "rastreio" },
-    { href: "#automacoes", number: "08", title: "Fluxos automáticos", detail: "XML, validação, pedido, impostos, ERP, SPED e cards por WhatsApp.", status: "processo" },
-    { href: "#financeiro", number: "09", title: "DRE gerencial", detail: "Simulação de venda, margem, despesa e resultado.", status: "decisão" }
+    { href: "#automacoes", number: "01", title: "Fluxos automáticos", detail: "XML, validação, pedido, impostos, ERP, SPED e cards por WhatsApp.", status: "processo" },
+    { href: "#antes-depois", number: "02", title: "Antes e depois", detail: "Do cenário manual à leitura executiva por indicador.", status: "evolução" },
+    { href: "#visoes", number: "03", title: "Visões da diretoria", detail: "Margem, capital parado, risco financeiro e fiscal.", status: "estratégico" },
+    { href: "#aplicativos", number: "04", title: "Aplicativos", detail: "Flutter, Firebase, chat em tempo real e painel admin.", status: "mobile" },
+    { href: "#solucoes", number: "05", title: "Áreas de negócio", detail: "Financeiro, fiscal, comercial, estoque e operação.", status: "BI executivo" },
+    { href: "#financeiro", number: "06", title: "DRE gerencial", detail: "Simulação de venda, margem, despesa e resultado.", status: "decisão" },
+    { href: "#demonstracoes", number: "07", title: "Demonstrações", detail: "Painéis simulados com KPIs, gráficos e rankings.", status: "vitrine" },
+    { href: "#precificacao", number: "08", title: "Precificação", detail: "Custo, markup, desconto, despesa e margem em lote.", status: "margem" },
+    { href: "#producao", number: "09", title: "Produção e oficinas", detail: "Mapa de setores, gargalos, terceiros e eficiência.", status: "operação" },
+    { href: "#tabelas", number: "10", title: "Tabelas de exceção", detail: "Divergência fiscal, conciliação e performance.", status: "rastreio" }
   ],
 
   directorViews: [
