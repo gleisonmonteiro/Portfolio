@@ -628,7 +628,10 @@ function setupPriceCalculator() {
 
 function setupNavigation() {
   const links = qsa(".nav-link");
-  const sections = links.map((link) => qs(link.getAttribute("href"))).filter(Boolean);
+  const sections = links
+    .map((link) => qs(link.getAttribute("href")))
+    .filter(Boolean)
+    .sort((first, second) => first.offsetTop - second.offsetTop);
 
   qsa(".nav-link, [data-jump-link]").forEach((link) => {
     link.addEventListener("click", (event) => {
